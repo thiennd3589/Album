@@ -1,0 +1,53 @@
+.cover {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #9dc5c3;
+  background-image: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+
+  img {
+    width: 100%;
+    height: auto;
+    opacity: 0.2;
+  }
+
+  .inner-border {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    .border {
+      height: 100%;
+      width: 100%;
+      border: 2px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .title {
+        color: white;
+        text-align: center;
+
+        .name {
+          font-size: 2rem;
+          letter-spacing: 2px;
+          font-family: "Nanum Myeongjo", serif;
+        }
+
+        .album {
+          font-weight: 100;
+          font-style: italic;
+          letter-spacing: 5px;
+        }
+      }
+    }
+  }
+}
+

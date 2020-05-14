@@ -1,0 +1,22 @@
+.add {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+
+  .inner-border {
+    height: 100%;
+    width: 100%;
+    border: 5px dotted lightblue;
+    color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #D5F3FE;
+    }
+  }
+}

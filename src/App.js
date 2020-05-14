@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-function App() {
+import { getSheetNumber } from './redux/sheet/sheet.action';
+
+import AddPage from './components/add-page/add-page.component';
+import Preface from './components/preface/preface.component';
+import Sheet from './components/sheet/sheet.component';
+import Page from './components/page/page.component';
+import Cover from './components/cover/cover.component';
+
+import './App.scss';
+const App = (props) => {
+  const {getSheetNumber} = props;
+
+  useEffect(() => {
+    const sheets = document.querySelectorAll('.sheet-inner');
+    getSheetNumber(sheets.length);
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+        <Sheet cover={true} front={<Page>
+          <Cover />
+        </Page>}></Sheet>
+        <Sheet sheetNumber='sheet-0' front={<Page>
+          <Cover />
+        </Page>} back={<Preface />}></Sheet>
+        <Sheet  front={<AddPage />} />
+      </div>
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  getSheetNumber: (num) => dispatch(getSheetNumber(num)),
+})
+
+export default connect(null, mapDispatchToProps)(App);

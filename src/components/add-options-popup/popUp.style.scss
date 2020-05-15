@@ -91,6 +91,16 @@
             }
           }
         }
+        .submit-button{
+          display: block;
+          border: none;
+          background-color: lightblue;
+          height: 40px;
+
+          &:focus{
+            outline: none;
+          }
+        }
       }
     }
   }

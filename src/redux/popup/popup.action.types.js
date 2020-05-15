@@ -1,0 +1,3 @@
+export const POPUP_ACTION_TYPES = {
+    TOGGLE_POPUP:'TOGGLE_POPUP',
+}
